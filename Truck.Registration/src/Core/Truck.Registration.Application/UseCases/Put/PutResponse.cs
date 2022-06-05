@@ -1,9 +1,8 @@
-﻿using MediatR;
-using Truck.Registration.Domain.Enums;
+﻿using Truck.Registration.Domain.Enums;
 
 namespace Truck.Registration.Application.UseCases.Put
 {
-    public class PutCommand : IRequest<PutResponse>
+    public class PutResponse
     {
         public int Id { get; set; } 
 

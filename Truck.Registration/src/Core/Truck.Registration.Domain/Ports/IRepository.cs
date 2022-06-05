@@ -12,9 +12,9 @@ namespace Truck.Registration.Domain.Ports
 
         Task<T> GetByIdAsync(int id);
         
-        T Add(T entity);
+        Task<T> Add(T entity);
         
-        Task UpdateAsync(T entity, int id);
+        void UpdateAsync(T entity);
         
         Task DeleteAsync(int id);
         

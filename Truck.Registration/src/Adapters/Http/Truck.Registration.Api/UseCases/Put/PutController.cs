@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Truck.Registration.Application.UseCases.Put;
 
 namespace Truck.Registration.Api.UseCases.Put
 {
@@ -15,9 +16,9 @@ namespace Truck.Registration.Api.UseCases.Put
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutAsync()
+        public async Task<IActionResult> PutAsync([FromBody] PutCommand command)
         {
-            var response = await _mediator.Send(new GetCommand());
+            var response = await _mediator.Send(command);
 
             return Ok(response);
         }

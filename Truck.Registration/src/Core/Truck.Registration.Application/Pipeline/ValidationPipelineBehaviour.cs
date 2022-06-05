@@ -1,9 +1,11 @@
 ﻿using FluentValidation;
 using MediatR;
+using System.Diagnostics.CodeAnalysis;
 using Truck.Registration.Application.Exceptions;
 
 namespace Truck.Registration.Application.Pipeline
 {
+    [ExcludeFromCodeCoverage]
     public class ValidationPipelineBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
     {
         private readonly IEnumerable<IValidator<TRequest>> _validators;

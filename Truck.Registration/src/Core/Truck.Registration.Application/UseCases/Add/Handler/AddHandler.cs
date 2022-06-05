@@ -19,7 +19,7 @@ namespace Truck.Registration.Application.UseCases.Add.Handler
         {
             await AddValidate(request);
 
-            var truckSaved = _unitOfWork.TruckRepository.Add(
+            var truckSaved = await _unitOfWork.TruckRepository.Add(
                 new Entity.Truck
                 {
                     Model = request.Model,
@@ -27,6 +27,7 @@ namespace Truck.Registration.Application.UseCases.Add.Handler
                     YearManufacture = request.YearManufacture.HasValue ? request.YearManufacture.Value : DateTime.UtcNow.Year,
                     CreateAt = DateTime.UtcNow,
                     UpdateAt = DateTime.UtcNow,
+                    Active = true
                 });
 
             await _unitOfWork.CommitAsync();
@@ -43,7 +44,7 @@ namespace Truck.Registration.Application.UseCases.Add.Handler
         public async Task AddValidate(AddCommand request)
         {
             if ((await _unitOfWork.TruckRepository.GetWithFilter(x => x.ModelYear == request.ModelYear && x.YearManufacture == request.YearManufacture && x.Model == request.Model && x.Active)).Any())
-                throw new CustomValidationException("Truck already exists!");
+                throw new CustomValidationException(new List<string> { "Truck already exists!" });
         }
     }
 }

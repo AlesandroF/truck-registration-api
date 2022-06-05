@@ -17,8 +17,8 @@ namespace Truck.Registration.MySql.Repositories
         public virtual async Task<List<TEntity>> GetAllAsync()
             => await _context.Set<TEntity>().ToListAsync();
 
-        public virtual TEntity Add(TEntity entity)
-            => (_context.GetDbSet<TEntity>().Add(entity)).Entity;
+        public virtual async Task<TEntity> Add(TEntity entity)
+            => (await _context.GetDbSet<TEntity>().AddAsync(entity)).Entity;
 
         public virtual async Task DeleteAsync(int id)
         {
@@ -32,13 +32,9 @@ namespace Truck.Registration.MySql.Repositories
         public virtual async Task<IEnumerable<TEntity>> GetWithFilter(Expression<Func<TEntity, bool>> search)
             => await _context.Set<TEntity>().AsNoTracking().Where(search).ToListAsync();
 
-        public virtual async Task UpdateAsync(TEntity entity, int id)
+        public virtual void UpdateAsync(TEntity entity)
         {
-            if (entity == null) return;
-            var existing = await GetByIdAsync(id);
-
-            if (existing != null)
-                _context.Entry(existing).CurrentValues.SetValues(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public virtual IQueryable<TEntity> Query(Expression<Func<TEntity, bool>> expression = null, string[] expands = null)

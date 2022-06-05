@@ -18,14 +18,14 @@ using Entity = Truck.Registration.Domain.Entities;
 namespace Truck.Registration.Tests.TruckTypes.Commands
 {
     [ExcludeFromCodeCoverage]
-    public class AddTypeCommandHandlerTests
+    public class AddCommandHandlerTests
     {
         private readonly Mock<IUnitOfWork> _unitOfWork;
         private readonly Mock<ITruckRepository> _truckRepositoryMock;
         private readonly AddHandler _handler;
         private readonly AddCommand _truckRequest;
 
-        public AddTypeCommandHandlerTests()
+        public AddCommandHandlerTests()
         {
             _unitOfWork = new Mock<IUnitOfWork>();
             _truckRepositoryMock = new Mock<ITruckRepository>();
@@ -52,7 +52,7 @@ namespace Truck.Registration.Tests.TruckTypes.Commands
                 YearManufacture = 2019
             };
 
-            _truckRepositoryMock.Setup(e => e.Add(It.IsAny<Entity.Truck>())).Returns(truck);
+            _truckRepositoryMock.Setup(e => e.Add(It.IsAny<Entity.Truck>())).ReturnsAsync(truck);
             _truckRepositoryMock.Setup(r => r.GetWithFilter(It.IsAny<Expression<Func<Entity.Truck, bool>>>())).ReturnsAsync(new List<Entity.Truck>());
 
             _unitOfWork.Setup(r => r.TruckRepository).Returns(_truckRepositoryMock.Object);
@@ -94,7 +94,7 @@ namespace Truck.Registration.Tests.TruckTypes.Commands
 
             _unitOfWork.Setup(r => r.TruckRepository).Returns(_truckRepositoryMock.Object);
 
-            Should.Throw<CustomValidationException>(() => _handler.AddValidate(new AddCommand() { Model = TruckModelEnum.FM, ModelYear = 2020, YearManufacture = 2020 })).Message.ShouldBe("Truck already exists!");
+            Should.Throw<CustomValidationException>(() => _handler.AddValidate(new AddCommand() { Model = TruckModelEnum.FM, ModelYear = 2020, YearManufacture = 2020 })).ErrosMessage.ShouldBe(new List<string> { "Truck already exists!" });
         }
 
         [Fact]

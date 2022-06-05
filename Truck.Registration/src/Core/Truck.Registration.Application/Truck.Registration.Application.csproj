@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Module\" />
-    <Folder Include="UseCases\Delete\Handler\" />
-    <Folder Include="UseCases\Put\Handler\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="FluentValidation" Version="11.0.2" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.2" />

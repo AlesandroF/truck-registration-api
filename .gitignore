@@ -349,3 +349,6 @@ Truck.Registration/src/Core/Truck.Registration.Domain/obj/Truck.Registration.Dom
 Truck.Registration/src/Core/Truck.Registration.Domain/obj/Truck.Registration.Domain.csproj.nuget.g.targets
 Truck.Registration/src/Core/Truck.Registration.Application/obj/project.assets.json
 Truck.Registration/src/Core/Truck.Registration.Application/obj/project.nuget.cache
+Truck.Registration/.vs/Truck.Registration/v17/TestStore/0/002.testlog
+Truck.Registration/src/Tests/Truck.Registration.Tests/bin/Debug/net6.0/fine-code-coverage/coverage-tool-output/diagnostics.datacollector.22-06-05_15-45-02_16701_5.log
+Truck.Registration/src/Tests/Truck.Registration.Tests/bin/Debug/net6.0/fine-code-coverage/coverage-tool-output/diagnostics.host.22-06-05_15-45-02_42903_5.log

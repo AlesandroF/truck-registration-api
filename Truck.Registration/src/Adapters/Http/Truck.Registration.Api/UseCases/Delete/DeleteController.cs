@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Truck.Registration.Application.UseCases.Delete;
 
 namespace Truck.Registration.Api.UseCases.Delete
 {
@@ -14,10 +15,14 @@ namespace Truck.Registration.Api.UseCases.Delete
             _mediator = mediator;
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteAsync()
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            var response = await _mediator.Send(new GetCommand());
+            var response = await _mediator.Send(
+                new DeleteCommand
+                {
+                    Id = id,
+                });
 
             return Ok(response);
         }
