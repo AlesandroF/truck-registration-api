@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{609CA384-ADDB-433C-BAC8-3CD2A122DDFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{C682B183-772F-4F43-A73E-888923638FF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Http", "Http", "{622BF37D-F7DA-4173-B2EF-30197EAF41C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{FAACF738-716E-4C5C-B5F8-B5DB46E17C41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{456FDBF5-7534-47FA-A7CD-9E4EDAE40C60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySql", "MySql", "{56841CA2-16B7-44F8-8E46-AD1D57EEC4BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truck.Registration.Api", "src\Adapters\Http\Truck.Registration.Api\Truck.Registration.Api.csproj", "{B7691A90-882A-4102-800D-78CA7A3C3320}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truck.Registration.MySql", "src\Adapters\Infrastructure\MySql\Truck.Registration.MySql\Truck.Registration.MySql.csproj", "{B58AC876-3B5E-47AD-93FF-0E64CC373CDC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truck.Registration.Application", "src\Core\Truck.Registration.Application\Truck.Registration.Application.csproj", "{A7D4F009-8900-4189-9419-4560A7A737D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Truck.Registration.Domain", "src\Core\Truck.Registration.Domain\Truck.Registration.Domain.csproj", "{59B20C11-7220-4D42-941F-2EE95C194651}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0A1F25AA-FA15-454A-B332-B005C6415096}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Truck.Registration.Tests", "src\Tests\Truck.Registration.Tests\Truck.Registration.Tests.csproj", "{6D5E099D-BF60-4C3C-A2CF-6BC0A6C649B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7691A90-882A-4102-800D-78CA7A3C3320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7691A90-882A-4102-800D-78CA7A3C3320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7691A90-882A-4102-800D-78CA7A3C3320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7691A90-882A-4102-800D-78CA7A3C3320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58AC876-3B5E-47AD-93FF-0E64CC373CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58AC876-3B5E-47AD-93FF-0E64CC373CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58AC876-3B5E-47AD-93FF-0E64CC373CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58AC876-3B5E-47AD-93FF-0E64CC373CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D4F009-8900-4189-9419-4560A7A737D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D4F009-8900-4189-9419-4560A7A737D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D4F009-8900-4189-9419-4560A7A737D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D4F009-8900-4189-9419-4560A7A737D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B20C11-7220-4D42-941F-2EE95C194651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B20C11-7220-4D42-941F-2EE95C194651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B20C11-7220-4D42-941F-2EE95C194651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B20C11-7220-4D42-941F-2EE95C194651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D5E099D-BF60-4C3C-A2CF-6BC0A6C649B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D5E099D-BF60-4C3C-A2CF-6BC0A6C649B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D5E099D-BF60-4C3C-A2CF-6BC0A6C649B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D5E099D-BF60-4C3C-A2CF-6BC0A6C649B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C682B183-772F-4F43-A73E-888923638FF0} = {609CA384-ADDB-433C-BAC8-3CD2A122DDFF}
+		{622BF37D-F7DA-4173-B2EF-30197EAF41C7} = {C682B183-772F-4F43-A73E-888923638FF0}
+		{FAACF738-716E-4C5C-B5F8-B5DB46E17C41} = {C682B183-772F-4F43-A73E-888923638FF0}
+		{456FDBF5-7534-47FA-A7CD-9E4EDAE40C60} = {609CA384-ADDB-433C-BAC8-3CD2A122DDFF}
+		{56841CA2-16B7-44F8-8E46-AD1D57EEC4BA} = {FAACF738-716E-4C5C-B5F8-B5DB46E17C41}
+		{B7691A90-882A-4102-800D-78CA7A3C3320} = {622BF37D-F7DA-4173-B2EF-30197EAF41C7}
+		{B58AC876-3B5E-47AD-93FF-0E64CC373CDC} = {56841CA2-16B7-44F8-8E46-AD1D57EEC4BA}
+		{A7D4F009-8900-4189-9419-4560A7A737D5} = {456FDBF5-7534-47FA-A7CD-9E4EDAE40C60}
+		{59B20C11-7220-4D42-941F-2EE95C194651} = {456FDBF5-7534-47FA-A7CD-9E4EDAE40C60}
+		{0A1F25AA-FA15-454A-B332-B005C6415096} = {609CA384-ADDB-433C-BAC8-3CD2A122DDFF}
+		{6D5E099D-BF60-4C3C-A2CF-6BC0A6C649B2} = {0A1F25AA-FA15-454A-B332-B005C6415096}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5622769C-3117-4882-BB99-6B5F0FF638B0}
+	EndGlobalSection
+EndGlobal
